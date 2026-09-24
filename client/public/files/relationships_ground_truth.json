@@ -1,0 +1,31 @@
+{
+  "description": "This file documents the intended hidden network for demo/validation purposes only. It is NOT an input to the extraction pipeline — use it to check whether your system correctly surfaces these connections after processing fir_reports.json, cdr_records.csv, financial_transactions.csv, and surveillance_notes.json.",
+  "central_coordinator": {
+    "entity": "Rajesh Verma (P001)",
+    "why_hidden": "Never named explicitly in any single FIR. Only referred to as 'Sir', 'RV', or via his burner number (7710099887). Investigators must cross-reference all 4 cases to identify him as the common node."
+  },
+  "key_hidden_links": [
+    {
+      "link": "P001 (Rajesh Verma, burner PH002) <-> P013 (Bhupinder Singh)",
+      "evidence": ["surveillance_notes.json: SN-003", "cdr_records.csv: multiple CDR entries between 7710099887 and 9814455667"],
+      "significance": "Connects the Mumbai narcotics case (CASE-2026-001) to the Punjab interception (CASE-2026-003) — these appear as unrelated FIRs on the surface."
+    },
+    {
+      "link": "P001 (Rajesh Verma, burner PH002) <-> P005/P006 (Vikram Singh / Karan Mehta, Delhi extortion)",
+      "evidence": ["surveillance_notes.json: SN-002", "cdr_records.csv: CDR entries between 7710099887 and Delhi numbers"],
+      "significance": "Connects the Mumbai case to the Delhi extortion case (CASE-2026-002)."
+    },
+    {
+      "link": "P004 (Priya Nair, account A002) -> P010 (Ramesh Gupta / Gupta Traders, account A003)",
+      "evidence": ["financial_transactions.csv: TXN entries ICICI-XXXXXXXX5678 -> SBI-XXXXXXXX9012"],
+      "significance": "Shows money flowing from the financial handler tied to the Mumbai drug case into the same shell account used to receive Delhi extortion payments — i.e. one laundering pipeline serving two crimes."
+    },
+    {
+      "link": "P011 (Farhan Sheikh, Kolkata) -> P001 (Rajesh Verma)",
+      "evidence": ["fir_reports.json: FIR-KOL-2026-0091 (mentions 'RV' as financier)", "surveillance_notes.json: SN-004", "cdr_records.csv: CDR entry P011 -> P001_main"],
+      "significance": "Connects the Kolkata trafficking enquiry (CASE-2026-004) to the same coordinator, suggesting a fourth, previously unconnected case is part of the same syndicate."
+    }
+  ],
+  "expected_graph_insight": "A well-built entity resolution + graph pipeline should surface Rajesh Verma (P001) as the single highest-centrality node once his primary number, burner number, and the 'RV' alias mentioned across 3 separate FIRs are correctly resolved into one entity — despite no single document naming him directly as the coordinator of all four cases.",
+  "suggested_demo_narrative": "1) Show four FIRs uploaded as if independent. 2) Run extraction + entity resolution. 3) Show the burner number and 'RV' alias getting merged into one entity across cases. 4) Show the graph view with Rajesh Verma highlighted as the top-ranked influencer/hub connecting all four cases. 5) Click the node to show the explainability panel citing the exact CDR rows, transaction rows, and FIR sentences that produced this conclusion."
+}

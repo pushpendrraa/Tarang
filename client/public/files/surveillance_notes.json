@@ -1,0 +1,30 @@
+[
+  {
+    "note_id": "SN-001",
+    "date": "2026-06-16",
+    "source": "Field surveillance, Andheri East",
+    "linked_case_id": "CASE-2026-001",
+    "text": "Subject seen entering ICICI Bank branch, Bandra, at 1145 hrs, believed to be Rajesh Verma (male, approx. 45 yrs, resident Andheri East). Met with a woman identified through bank staff as Priya Nair, account holder of account ending 5678. Meeting lasted approximately 20 minutes. Branch manager Anil Joshi confirmed multiple cash deposits into this account over the preceding month, in amounts ranging Rs. 40,000 to Rs. 1,80,000, from varied depositors."
+  },
+  {
+    "note_id": "SN-002",
+    "date": "2026-06-22",
+    "source": "Telecom tower dump analysis, Chandni Chowk sector",
+    "linked_case_id": "CASE-2026-002",
+    "text": "Tower dump for the period surrounding the extortion complaint shows number 7710099887 active in the Chandni Chowk-Karol Bagh sector on two occasions coinciding with dates the sedan DL8C XY 5678 was reported near the complainant's shop. This number does not match any number formally listed as belonging to Vikram Singh or Karan Mehta and is suspected to be a burner device."
+  },
+  {
+    "note_id": "SN-003",
+    "date": "2026-06-27",
+    "source": "Forensic handset analysis, Amritsar",
+    "linked_case_id": "CASE-2026-003",
+    "text": "Call log extraction from Bhupinder Singh's seized handset (9814455667) confirms 14 calls over the past two months to number 7710099887, the same number flagged in the Delhi tower dump (ref SN-002) and suspected to be a burner used by 'RV'. Additionally, one SMS thread references a delivery 'same as MH02 route', suggesting a possible link to the Mumbai narcotics case (CASE-2026-001)."
+  },
+  {
+    "note_id": "SN-004",
+    "date": "2026-06-29",
+    "source": "Informant debrief, Park Street",
+    "linked_case_id": "CASE-2026-004",
+    "text": "Follow-up debrief with informant Meena Kumari indicates the name 'RV' was mentioned a second time in connection with a wire transfer instruction routed through an account associated with a Delhi-based trading firm. Informant could not confirm the exact firm name but recalled it sounding like a common surname combined with 'Traders'."
+  }
+]

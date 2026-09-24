@@ -1,0 +1,42 @@
+[
+  {
+    "case_id": "CASE-2026-001",
+    "title": "Narcotics Recovery - Dongri",
+    "police_station": "Dongri Police Station, Mumbai",
+    "date_registered": "2026-06-14",
+    "status": "Under Investigation",
+    "assigned_investigator": "Insp. R. Kulkarni",
+    "crime_type": "NDPS Act - Drug Trafficking",
+    "linked_fir": "FIR-MUM-2026-0412"
+  },
+  {
+    "case_id": "CASE-2026-002",
+    "title": "Extortion Complaint - Chandni Chowk",
+    "police_station": "Chandni Chowk Police Station, Delhi",
+    "date_registered": "2026-06-20",
+    "status": "Under Investigation",
+    "assigned_investigator": "Insp. S. Bhatia",
+    "crime_type": "IPC 384 - Extortion",
+    "linked_fir": "FIR-DEL-2026-0778"
+  },
+  {
+    "case_id": "CASE-2026-003",
+    "title": "Truck Interception - Amritsar Checkpoint",
+    "police_station": "Amritsar Rural Police Station, Punjab",
+    "date_registered": "2026-06-25",
+    "status": "Under Investigation",
+    "assigned_investigator": "Insp. H. Gill",
+    "crime_type": "NDPS Act / Customs Violation",
+    "linked_fir": "FIR-PB-2026-0219"
+  },
+  {
+    "case_id": "CASE-2026-004",
+    "title": "Informant Tip - Park Street",
+    "police_station": "Park Street Police Station, Kolkata",
+    "date_registered": "2026-06-28",
+    "status": "Preliminary Enquiry",
+    "assigned_investigator": "Insp. A. Chatterjee",
+    "crime_type": "Human Trafficking - Preliminary",
+    "linked_fir": "FIR-KOL-2026-0091"
+  }
+]
