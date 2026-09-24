@@ -580,6 +580,12 @@ export default function GraphExplorer() {
 
   // Filter nodes
   const visibleNodes = nodes.filter(n => {
+    if (selectedNode) {
+      if (n.id === selectedNode.id) return true;
+      const isConnected = edges.some(e => (e.source === selectedNode.id && e.target === n.id) || (e.target === selectedNode.id && e.source === n.id));
+      if (!isConnected) return false;
+      return true;
+    }
     if (typeFilter && n.type !== typeFilter) return false;
     if (flaggedOnly && !n.flagged) return false;
     if (caseFilter && n.type === 'person' && !n.caseIds?.includes(caseFilter)) return false;
