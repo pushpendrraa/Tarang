@@ -141,12 +141,14 @@ export default function Analytics() {
   const flaggedAccounts = ['ICICI-XXXXXXXX5678', 'SBI-XXXXXXXX9012', 'AXIS-XXXXXXXX3456'];
 
   return (
-    <div style={{ padding: '32px 24px', maxWidth: 1200, margin: '0 auto' }}>
-      <div style={{ marginBottom: 24 }}>
-        <h1 style={{ margin: 0, fontSize: '1.75rem', fontWeight: 800, letterSpacing: '-0.04em' }}>Network Analytics</h1>
-        <p style={{ margin: '4px 0 0', color: 'var(--color-text-tertiary)', fontSize: '0.875rem' }}>
-          Algorithmic influence scoring from CDR + financial data. All rankings are investigator leads.
-        </p>
+    <div className="page-container" style={{ maxWidth: 1200 }}>
+      <div className="page-header">
+        <div>
+          <h1 className="page-title">Network Analytics</h1>
+          <p style={{ margin: '4px 0 0', color: 'var(--color-text-tertiary)', fontSize: '0.875rem' }}>
+            Algorithmic influence scoring from CDR + financial data. All rankings are investigator leads.
+          </p>
+        </div>
       </div>
 
       {/* Summary stats */}
@@ -166,7 +168,7 @@ export default function Analytics() {
         ))}
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: 24, alignItems: 'start' }}>
+      <div className="analytics-layout">
         {/* Charts */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
           {/* Influence chart */}

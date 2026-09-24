@@ -736,7 +736,7 @@ export default function GraphExplorer() {
   const zoomOut = () => { const cy = cyInst.current; if (cy) cy.zoom({ level: cy.zoom() * 0.7, renderedPosition: { x: cyRef.current.offsetWidth / 2, y: cyRef.current.offsetHeight / 2 } }); };
 
   return (
-    <div style={{ height: 'calc(100vh - 0px)', display: 'flex', flexDirection: 'column', padding: '18px 24px', gap: 14, boxSizing: 'border-box' }}>
+    <div className="graph-container">
       {/* Header row */}
       <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
         <h1 style={{ margin: 0, fontSize: '1.25rem', fontWeight: 800, letterSpacing: '-0.02em', flexShrink: 0 }}>Graph Explorer</h1>

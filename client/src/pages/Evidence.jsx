@@ -32,12 +32,14 @@ export default function Evidence() {
   );
 
   return (
-    <div style={{ padding: '32px 24px', maxWidth: 1100, margin: '0 auto' }}>
-      <div style={{ marginBottom: 24 }}>
-        <h1 style={{ margin: 0, fontSize: '1.75rem', fontWeight: 800, letterSpacing: '-0.04em' }}>Evidence</h1>
-        <p style={{ margin: '4px 0 0', color: 'var(--color-text-tertiary)', fontSize: '0.875rem' }}>
-          Raw investigative data across all sources. All data is read-only in demo mode.
-        </p>
+    <div className="page-container" style={{ maxWidth: 1100 }}>
+      <div className="page-header">
+        <div>
+          <h1 className="page-title">Evidence</h1>
+          <p style={{ margin: '4px 0 0', color: 'var(--color-text-tertiary)', fontSize: '0.875rem' }}>
+            Raw investigative data across all sources. All data is read-only in demo mode.
+          </p>
+        </div>
       </div>
 
       {/* Tab bar */}
@@ -117,7 +119,7 @@ export default function Evidence() {
 
       {/* CDR Table */}
       {activeTab === 'cdr' && (
-        <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
+        <div className="card" style={{ padding: 0, overflowX: 'auto' }}>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8125rem' }}>
               <thead>

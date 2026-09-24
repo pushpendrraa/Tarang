@@ -484,6 +484,63 @@ body {
   letter-spacing: 0.04em;
 }
 
+/* ─── Generic Page Layout ────────────────────────────────────────── */
+.page-container {
+  padding: 32px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--color-text-primary);
+}
+
+.page-grid {
+  display: grid;
+  gap: 20px;
+}
+.page-grid-2 { grid-template-columns: 1fr 1fr; }
+.page-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+.page-grid-4 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+.cases-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.cases-layout.has-selected {
+  grid-template-columns: 340px 1fr;
+}
+
+.analytics-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 24px;
+  align-items: start;
+}
+
+.graph-container {
+  height: calc(100vh - 0px);
+  display: flex;
+  flex-direction: column;
+  padding: 18px 24px;
+  gap: 14px;
+  box-sizing: border-box;
+}
+
 /* ─── Dashboard Layout ───────────────────────────────────────────── */
 .dashboard-root {
   padding: 28px 24px;
@@ -491,6 +548,7 @@ body {
   margin: 0 auto;
   overflow-x: hidden;
 }
+
 
 /* Header */
 .dash-header {
@@ -831,6 +889,30 @@ body {
   .tab-btn.active { color: var(--color-accent); }
   .tab-btn svg { stroke-width: 2; }
 
+  /* Generic page layout mobile */
+  .page-container {
+    padding: 16px 14px;
+  }
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .page-title {
+    font-size: 1.5rem;
+  }
+  .page-grid-2, .page-grid-3, .page-grid-4, .cases-layout.has-selected, .analytics-layout {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .graph-container {
+    height: calc(100vh - 72px);
+    padding: 10px;
+    gap: 10px;
+  }
+  
   /* Dashboard mobile */
   .dashboard-root {
     padding: 16px 14px;

@@ -36,12 +36,14 @@ export default function Cases() {
   const casePersons  = nodes.filter(n => n.type === 'person' && n.caseIds?.includes(selected));
 
   return (
-    <div style={{ padding: '32px 24px', maxWidth: 1200, margin: '0 auto' }}>
-      <div style={{ marginBottom: 24 }}>
-        <h1 style={{ margin: 0, fontSize: '1.75rem', fontWeight: 800, letterSpacing: '-0.04em' }}>Cases</h1>
-        <p style={{ margin: '4px 0 0', color: 'var(--color-text-tertiary)', fontSize: '0.875rem' }}>
-          {cases.length} active investigation{cases.length !== 1 ? 's' : ''} · SIH26189
-        </p>
+    <div className="page-container" style={{ maxWidth: 1200 }}>
+      <div className="page-header">
+        <div>
+          <h1 className="page-title">Cases</h1>
+          <p style={{ margin: '4px 0 0', color: 'var(--color-text-tertiary)', fontSize: '0.875rem' }}>
+            {cases.length} active investigation{cases.length !== 1 ? 's' : ''} · SIH26189
+          </p>
+        </div>
       </div>
 
       {/* Search */}
@@ -50,7 +52,7 @@ export default function Cases() {
         <input className="input-field" placeholder="Search cases…" value={search} onChange={e => setSearch(e.target.value)} style={{ paddingLeft: 40 }} />
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: selected ? '340px 1fr' : '1fr', gap: 20 }}>
+      <div className={`cases-layout ${selected ? 'has-selected' : ''}`}>
         {/* Case list */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           {filtered.map((c, i) => (
