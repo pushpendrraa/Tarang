@@ -606,25 +606,12 @@ export default function GraphExplorer() {
       const color = colorBy === 'community'
         ? (COMMUNITY_COLORS[n.communityId >= 0 ? n.communityId : 6] || '#8E8E93')
         : (TYPE_CONFIG[n.type]?.color || '#8E8E93');
+      const displayLabel = n.label?.length > 14 ? n.label.slice(0, 13) + '\u2026' : (n.label || n.id);
       return {
-        data: { id: n.id, label: n.label?.length > 14 ? n.label.slice(0, 13) + '…' : n.label, ...n, size, nodeColor: color },
-        style: {
-          'background-color': color,
-          width: size, height: size,
-          label: n.label?.length > 14 ? n.label.slice(0, 13) + '…' : n.label,
-          'font-size': 9, color: '#fff',
-          'text-valign': 'bottom', 'text-margin-y': 4,
-          'font-weight': 600,
-          'text-background-color': 'rgba(0,0,0,0.55)',
-          'text-background-opacity': 0.7,
-          'text-background-padding': '2px',
-          'text-background-shape': 'roundrectangle',
-          'border-width': n.flagged ? 3 : 0,
-          'border-color': '#FF453A',
-          'border-style': 'solid',
-        },
+        data: { ...n, id: n.id, displayLabel, size, nodeColor: color },
       };
     });
+
 
     const cyEdges = visibleEdges.map(e => ({
       data: { id: e.id, source: e.source, target: e.target, label: e.type, weight: e.weight },
@@ -647,6 +634,30 @@ export default function GraphExplorer() {
       container: cyRef.current,
       elements: { nodes: cyNodes, edges: cyEdges },
       style: [
+        {
+          selector: 'node',
+          style: {
+            'background-color': 'data(nodeColor)',
+            width: 'data(size)', height: 'data(size)',
+            content: 'data(displayLabel)',
+            'font-size': 9, color: '#fff',
+            'text-valign': 'bottom', 'text-margin-y': 4,
+            'font-weight': 600,
+            'text-background-color': 'rgba(0,0,0,0.55)',
+            'text-background-opacity': 0.7,
+            'text-background-padding': '2px',
+            'text-background-shape': 'roundrectangle',
+            'border-style': 'solid',
+          },
+        },
+        {
+          selector: 'node[?flagged]',
+          style: { 'border-width': 3, 'border-color': '#FF453A' },
+        },
+        {
+          selector: 'node[!flagged]',
+          style: { 'border-width': 0 },
+        },
         { selector: 'node:selected', style: { 'border-width': 3, 'border-color': '#0A84FF', 'overlay-opacity': 0 } },
         { selector: 'edge:selected', style: { 'line-color': '#0A84FF', width: 2 } },
         { selector: '.dimmed', style: { opacity: 0.12 } },
