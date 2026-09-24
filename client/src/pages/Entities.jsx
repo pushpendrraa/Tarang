@@ -203,7 +203,7 @@ export default function Entities() {
         <span style={{ fontSize: '0.8125rem', color: 'var(--color-text-quaternary)', marginLeft: 'auto' }}>{filtered.length} results</span>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: selected ? '1fr 400px' : '1fr', gap: 20, alignItems: 'start' }}>
+      <div className={`entities-layout ${selected ? 'has-selected' : ''}`}>
         {/* Entity grid */}
         <motion.div
           style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 12 }}
